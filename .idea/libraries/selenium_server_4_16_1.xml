@@ -4,6 +4,10 @@
       <root url="jar://$PROJECT_DIR$/libraries/selenium-server-4.16.1.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libraries/selenium-api-4.16.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../01 - Software /selenium-firefox-driver-4.16.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libraries/selenium-support-4.16.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
