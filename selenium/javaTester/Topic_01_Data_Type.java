@@ -39,6 +39,8 @@ public class Topic_01_Data_Type {
 
     Topic_01_Data_Type topic01 = new Topic_01_Data_Type();
 
+    By by;
+
     // Interface
     JavascriptExecutor javascriptExecutor;
 
