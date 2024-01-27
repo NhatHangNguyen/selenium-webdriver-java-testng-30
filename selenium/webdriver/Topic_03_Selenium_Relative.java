@@ -55,9 +55,13 @@ public class Topic_03_Selenium_Relative {
         WebElement rememberMeCheckBoxElement = driver.findElement(By.name("RememberMe")); //không phải text nên trả ra null
 
         // Relative theo WebElement
-        RelativeLocator.with(By.tagName("label"))
-                .above(loginButtonByElement)
-                .toRightOf(rememberMeCheckBoxElement);
+        WebElement element = driver.findElement(
+                RelativeLocator.with(By.tagName("label"))
+                        .above(loginButtonByElement)
+                        .toRightOf(rememberMeCheckBoxElement)
+        );
+        // In ra screen
+        System.out.println(rememberMeCheckBoxElement.getText());
     }
 
     @Test

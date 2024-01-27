@@ -28,24 +28,36 @@ public class Topic_02_Selenium_Locator {
     }
 
     // HTML Element: <tagname attribute_name_1='attribute_value' attribute_name_2='attribute_value' ..>
+
+    /* Selenium version: 1.x/ 2.x/ 3.x/ 4.x
+        8 loai Locator
+        Selenium Locator = HTML Attribute: Id/ Class/ Name = Trûng vs 3 attribute cúa HTML
+        LinkText/ Partial LinkText: HTML Link (the a)
+        Tagname: HTML Tagname
+        Css/ XPath
+
+        Selenium version 4. - GUI (Graphic User Interface)
+        Class - Relative Locator: above/ bellow/ near/ leftof / rightof
+    */
     @Test
     public void TC_01_ID() {
-        driver.findElement(By.id("FirstName")).sendKeys("Hang");
+        driver.findElement(By.id("FirstName"));
     }
 
     @Test
     public void TC_02_Class() {
         driver.findElement(By.className("header-logo"));
-
     }
 
     @Test
     public void TC_03_Name() {
+
         driver.findElement(By.name("DateOfBirthDay"));
     }
 
     @Test
     public void TC_04_TagName() {
+
         driver.findElements(By.tagName("input"));
     }
 
