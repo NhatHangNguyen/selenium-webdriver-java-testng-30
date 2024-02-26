@@ -48,7 +48,7 @@ public class Topic_08_WebBrowser_Commands {
     }
 
     @Test
-    public void TC_01_() throws MalformedURLException {
+    public void TC_01_Browser() throws MalformedURLException {
         // Set trực tiếp
         //Mở ra page URL bất kì
         driver.get("https://www.facebook.com/");
