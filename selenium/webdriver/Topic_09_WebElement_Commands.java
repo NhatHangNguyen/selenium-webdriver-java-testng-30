@@ -138,10 +138,6 @@ public class Topic_09_WebElement_Commands {
         // Hanh vi giông phim Enter
         // Register/ Login/ Search/.
         driver.findElement(By.id("")) .submit ();
-
-
-
-
     }
 
     @AfterClass

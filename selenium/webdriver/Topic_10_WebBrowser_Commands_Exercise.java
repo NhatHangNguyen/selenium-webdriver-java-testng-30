@@ -97,7 +97,6 @@ public class Topic_10_WebBrowser_Commands_Exercise {
 
     @AfterClass
     public void afterClass() {
-
         driver.quit();
     }
 
@@ -107,7 +106,5 @@ public class Topic_10_WebBrowser_Commands_Exercise {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }
