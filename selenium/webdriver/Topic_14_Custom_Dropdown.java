@@ -172,14 +172,14 @@ public class Topic_14_Custom_Dropdown {
         sleepInSecond(1);
 
         List<WebElement> allItem = explicitWait.until(ExpectedConditions.
-                presenceOfAllElementsLocatedBy(By.cssSelector(childCss)));
-        for (WebElement item: allItem){
-            String textItem = item.getText();
-            System.out.println("Text item = " + textItem);
-            if(textItem.equals(itemTextExpected)){
-                item.click();
-                break;
-            }
+                    presenceOfAllElementsLocatedBy(By.cssSelector(childCss)));
+            for (WebElement item: allItem){
+                String textItem = item.getText();
+                System.out.println("Text item = " + textItem);
+                if(textItem.equals(itemTextExpected)){
+                    item.click();
+                    break;
+                }
         }
     }
 }

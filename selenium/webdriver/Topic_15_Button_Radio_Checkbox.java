@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.time.Duration;
+import java.util.Locale;
 
 public class Topic_15_Button_Radio_Checkbox {
     WebDriver driver;
@@ -39,6 +40,7 @@ public class Topic_15_Button_Radio_Checkbox {
         // Verify button đã được enable khi click vào checkbox
         Assert.assertTrue(registerButton.isEnabled());
 
+        // CÁCH 1
         // Lây ra ma mau nên cúa button
         String registerBackgroundRGB = registerButton.getCssValue("background-color");
         System.out.println("Background color RGB = " + registerBackgroundRGB);
@@ -51,6 +53,9 @@ public class Topic_15_Button_Radio_Checkbox {
         System.out.println("Background color Hexa = " + registerBackgroundHexa);
 
         Assert.assertEquals(registerBackgroundHexa,"#ef5a00");
+
+        // CÁCH 2
+        //Assert.assertEquals(Color.fromString(registerButton.getCssValue("background-color")).asHex().toLowerCase(),"#ef5a00");
     }
 
     @AfterClass
