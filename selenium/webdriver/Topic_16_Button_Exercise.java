@@ -13,11 +13,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.time.Instant;
 import java.util.List;
 
 
-public class Topic_16_Button_Radio_Checkbox_Exercise {
+public class Topic_16_Button_Exercise {
     WebDriver driver;
     WebDriverWait explicitWait;
 
@@ -26,6 +25,7 @@ public class Topic_16_Button_Radio_Checkbox_Exercise {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
+        explicitWait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     @Test
@@ -62,6 +62,7 @@ public class Topic_16_Button_Radio_Checkbox_Exercise {
         sleepInSecond(5);
 
         WebElement continueButton = driver.findElement(By.xpath("//button[@data-testid='lead form continue']"));
+        WebElement countryButton = driver.findElement(By.cssSelector("button#downshift-0-toggle-button"));
 
         // Verify Continue button disable
         Assert.assertFalse(continueButton.isEnabled());
@@ -73,23 +74,18 @@ public class Topic_16_Button_Radio_Checkbox_Exercise {
         driver.findElement(By.cssSelector("input#phoneNumber")).sendKeys("0978547389");
         driver.findElement(By.cssSelector("input#organization")).sendKeys("Viet Nam");
 
-        driver.findElement(By.cssSelector("button#downshift-0-toggle-button")).click();
+        selectItemDropdown("//label[text()='Country']//following::button[@id='downshift-0-toggle-button']","//label[text()='Country']//following::div[@data-testid='select menu item']", "AE");
         sleepInSecond(1);
-        explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"downshift-0-input\" and @value='AD']")));
-        List<WebElement> allItem = driver.findElements(By.xpath("//*[@id=\"downshift-0-input\" and @value='AD']"));
-        for (WebElement item: allItem){
-            String textItem = item.getText();
-            System.out.println("Text item = " + textItem);
-            if(textItem.equals("AD")){
-                item.click();
-                break;
-            }
-        }
+
+        selectItemDropdown("//label[text()='State']//following::button[@class='src-shared-ui-dropdown-select-ui-menu-menu-toggle--root-mL2+o']","//label[text()='State']//following::div[@data-testid='select menu item']", "AZ");
+        sleepInSecond(1);
+
+        // Verify continue button enable
     }
 
     @AfterClass
     public void afterClass() {
-        driver.quit();
+        //driver.quit();
     }
 
     public void sleepInSecond(long timeInSecond) {
@@ -97,6 +93,22 @@ public class Topic_16_Button_Radio_Checkbox_Exercise {
             Thread.sleep(timeInSecond * 1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void selectItemDropdown(String parentCss, String childCss, String itemTextExpected){
+        driver.findElement(By.xpath(parentCss)).click();
+        sleepInSecond(2);
+
+        List<WebElement> allItem = explicitWait.until(ExpectedConditions.
+                presenceOfAllElementsLocatedBy(By.xpath(childCss)));
+        for (WebElement item: allItem){
+            String textItem = item.getText();
+            System.out.println("Text item = " + textItem);
+            if(textItem.equals(itemTextExpected)){
+                item.click();
+                break;
+            }
         }
     }
 }
