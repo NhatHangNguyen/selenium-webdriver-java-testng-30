@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI Web Automation" parallel="methods">
+
+    <test verbose="2" preserve-order="true" name="Run on Chrome browser">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="version" value="122"></parameter>
+        <classes>
+            <class name="testNg.Topic_09_Parameter" />
+        </classes>
+    </test>
+
+</suite>
