@@ -1,6 +1,4 @@
-package javaAccModFirst;
-
-import org.openqa.selenium.WebDriver;
+package javaTester.javaAccModFirst;
 
 public class Dog {
     Annimal annimal = new Annimal(); // instance / object

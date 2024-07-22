@@ -1,4 +1,4 @@
-package javaAccModFirst;
+package javaTester.javaAccModFirst;
 
 public class Annimal {
     private String name;

@@ -1,6 +1,6 @@
-package javaAccModSecond;
+package javaTester.javaAccModSecond;
 
-import javaAccModFirst.Computer;
+import javaTester.javaAccModFirst.Computer;
 
 public class Workstation {
 
